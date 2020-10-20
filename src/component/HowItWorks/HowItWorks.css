@@ -1,0 +1,117 @@
+/* Section 2 styling */
+.how_wrapper {
+  background: #ffffff;
+}
+.sec2_heading {
+  text-align: center;
+  color: #555555;
+  line-height: 9rem;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.apply {
+  color: #555555;
+  text-align: center;
+  padding: 1rem;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 18px;
+}
+.apply_instructions {
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  width: 20rem;
+  color: #888888;
+}
+
+.underline {
+  width: 36px;
+  margin: 0 auto;
+  border-bottom: 5px solid #f24b6a;
+}
+
+.circles {
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  justify-items: center;
+  padding-top: 0.4rem;
+  padding-left: 1.7rem;
+  background: #5ebfbf;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.wrap_2 {
+  display: flex;
+  justify-content: center;
+}
+
+.message {
+  margin: 5rem;
+}
+
+/* Media queries */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+  .wrap_2 {
+    display: flex;
+    flex-direction: column;
+    padding-top: 4rem;
+    margin-top: -2.5rem;
+  }
+
+  .sec2_heading {
+    font-size: 24px;
+  }
+
+  .underline {
+    width: 36px;
+    margin: 0 auto;
+    border-bottom: 4px solid #f24b6a;
+    margin-top: -2rem;
+  }
+
+  #how_title {
+    position: relative;
+    height: 15vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .sec2_heading {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .message {
+    margin: 1rem;
+  }
+  .circles {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+    padding-top: 6px;
+    padding-left: 15px;
+  }
+
+  .apply_instructions {
+    font-size: 12px;
+    text-align: center;
+  }
+}
