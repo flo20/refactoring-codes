@@ -1,20 +1,25 @@
 import React from 'react';
 import './App.css';
+import Footer from './component/Footer/Footer';
+//import Section from "./component/Section/Section";
 
 
-import Navbar from "./component/Navbar/Navbar";
+//import Navbar from "./component/Navbar/Navbar";
 import HowItWorks from "./component/HowItWorks/HowItWorks";
+import NavbarR from './component/Navbar/NavbarR';
 import WhyGlobuzzer from "./component/WhyGlobuzzer/WhyGlobuzzer";
 function App() {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
+      <NavbarR/>
       <section id="testimonials">
-        <HowItWorks className="wrap_block" />
+        <HowItWorks/>
       </section>
       <section id="contact">
-        <WhyGlobuzzer className="wrap_block" />
+        <WhyGlobuzzer/>
       </section>
+      <Footer/>
     </div>
   );
 }

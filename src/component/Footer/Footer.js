@@ -1,128 +1,93 @@
 import React from "react";
-import "./Footer.css";
+import { Link } from "react-router-dom";
+import footer from "./../Footer/Footer.module.css";
+import { LogoFooter } from "./../Logo/Logo";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faLinkedin,
-  faInstagram,
-  faFacebook,
-  faTwitter,
-  faPinterest,
-} from "@fortawesome/free-brands-svg-icons";
+import { FaFacebook } from "react-icons/fa";
+import { AiFillTwitterCircle } from "react-icons/ai";
+import { FaPinterest } from "react-icons/fa";
+import { AiFillYoutube } from "react-icons/ai";
+import { SiLinkedin } from "react-icons/si";
+import { AiOutlineInstagram } from "react-icons/ai";
+import { IconContext } from "react-icons";
 
 const Footer = () => {
   return (
-    <div className="foot_container">
-      <a href="https://globuzzer.com/">
-        <img
-          src="/assets/globuzzer_logo.svg"
-          alt="logo2"
-          className="logo2"
-          style={{ paddingLeft: "7.5rem", paddingTop: "2rem" }}
-        />
-      </a>
-      <div className="footer">
-        <div id="foot_links">
-          <a
-            href="https://www.google.com/maps/place/Back%C3%A4ngsv%C3%A4gen+24,+192+73+Sollentuna,+Sweden/@59.4576337,17.8907952,17z/data=!3m1!4b1!4m5!3m4!1s0x465f98b09703d6db:0x75988cff7b409cd4!8m2!3d59.4576337!4d17.8929839"
-            id="foot_links"
-          >
-            <br />
-            <p>Backängsvägen 24</p>
-            <p id="foot_links">192 73 Sollentuna, Sweden</p>
-          </a>
-
-          <p>+46 73 555 5 134</p>
-          <a href="mailto:info@globuzzer.com" id="foot_links">
-            info@globuzzer.com
-          </a>
-        </div>
-        <div className="foot2">
-          <a href="https://globuzzer.com/" id="foot_links">
-            Destinations
-          </a>
-          <br />
-          <br />
-          <a href="https://globuzzer.com/" id="foot_links">
-            Articles
-          </a>
-          <br />
-          <br />
-          <a href="https://globuzzer.com/" id="foot_links">
-            Services
-          </a>
-        </div>
-        <div className="terms">
-          <a href="https://www.mightynetworks.com/terms-of-use">
-            Terms & Conditions
-          </a>
-          <br />
-          <a href="https://www.mightynetworks.com/privacy-policy">
-            Privacy Policy
-          </a>
-        </div>
-        <div>
-          <p className="follow">FOLLOW US</p>
-
-          <div className="social_icon_mobile">
+    <div className={footer.container}>
+      <footer className={footer.wrapper}>
+        <div className={footer.wraps}>
+          <div className={footer.first}>
+            <LogoFooter />
+            <ul className={footer.blocks}>
+              <Link
+                to="https://www.google.com/maps/place/Back%C3%A4ngsv%C3%A4gen+24,+192+73+Sollentuna,+Sweden/@59.4576337,17.8907952,17z/data=!3m1!4b1!4m5!3m4!1s0x465f98b09703d6db:0x75988cff7b409cd4!8m2!3d59.4576337!4d17.8929839"
+                className={footer.links}
+              >
+                <li>
+                  Backängsvägen 24 <br />
+                  192 73 Sollentuna, Sweden
+                </li>
+              </Link>
+              <li>+46 73 555 5 134</li>
+              <Link to="mailto:info@globuzzer.com" className={footer.links}>
+                <li>info@globuzzer.com</li>
+              </Link>
+              <li>© 2020 Globuzzer. All rights reserved</li>
+            </ul>
+          </div>
+          <div className={footer.second}>
+            <ul>
+              <Link to="https://globuzzer.com/" className={footer.links}>
+                <li>Destinations</li>
+              </Link>
+              <Link to="https://globuzzer.com/" className={footer.links}>
+                <li>Articles</li>
+              </Link>
+              <Link to="https://globuzzer.com/" className={footer.links}>
+                <li>Services</li>
+              </Link>
+            </ul>
+          </div>
+          <div className={footer.third}>
+            <ul>
+              <Link
+                to="https://www.mightynetworks.com/terms-of-use"
+                className={footer.links}
+              >
+                <li>
+                  Terms & Conditions <br />
+                  Privacy Policy
+                </li>
+              </Link>
+            </ul>
+          </div>
+          <div className={footer.fourth}>
+            <h4>FOLLOW US</h4>
             <div>
-              <a href="https://www.facebook.com/Globuzzer/">
-                <FontAwesomeIcon
-                  icon={faFacebook}
-                  style={{ fontSize: "2.4rem", color: "#E4E4E4" }}
-                  className="icons1"
-                />
-              </a>
-
-              <a href="https://twitter.com/globuzzer">
-                <FontAwesomeIcon
-                  icon={faTwitter}
-                  style={{ fontSize: "2.4rem", color: "#E4E4E4" }}
-                  className="icons1"
-                />
-              </a>
-              <a href="https://www.pinterest.se/globuzzer/_created/">
-                <FontAwesomeIcon
-                  icon={faPinterest}
-                  style={{ fontSize: "2.4rem", color: "#E4E4E4" }}
-                  className="icons1"
-                />
-              </a>
+              <IconContext.Provider
+                value={{
+                  style: { color: "white" },
+                }}
+              >
+                <FaFacebook />
+                <AiFillTwitterCircle />
+                <FaPinterest />
+              </IconContext.Provider>
             </div>
-
             <div>
-              <a href="https://www.youtube.com/channel/UC4u8N-QBDMWG6OqzSni8clw">
-                <FontAwesomeIcon
-                  icon="play-circle"
-                  style={{ fontSize: "2.4rem", color: "#E4E4E4" }}
-                  className="icons1"
-                />
-              </a>
-
-              <a href="https://www.linkedin.com/company/globuzzer/">
-                <FontAwesomeIcon
-                  icon={faLinkedin}
-                  style={{ fontSize: "2.4rem", color: "#E4E4E4" }}
-                  className="icons1"
-                />
-              </a>
-
-              <a href="https://www.instagram.com/globuzzer/">
-                <FontAwesomeIcon
-                  icon={faInstagram}
-                  style={{
-                    fontSize: "2.4rem",
-                    color: "#E4E4E4",
-                    marginLeft: "0.6rem",
-                  }}
-                  className="icons1"
-                />
-              </a>
+              <IconContext.Provider
+                value={{
+                  style: { color: "white" },
+                }}
+              >
+                <AiFillYoutube />
+                <SiLinkedin />
+                <AiOutlineInstagram />
+              </IconContext.Provider>
             </div>
           </div>
         </div>
-      </div>
-      <p className="rights">© 2020 Globuzzer. All rights reserved </p>
+      </footer>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "./Navbar.css";
+
+//import "./Navbar.css";
 
 import logo from "./../assets/globuzz_logo.svg";
 import logoMobile from "./../assets/globe_logo.svg";

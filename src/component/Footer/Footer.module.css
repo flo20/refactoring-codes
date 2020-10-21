@@ -1,0 +1,36 @@
+.container {
+  background: #f24b6a;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem;
+ 
+}
+.wrapper{
+    max-width: 2000px;
+}
+
+.wraps{
+    display: flex;
+    justify-content: space-around;
+}
+
+.second, .third, .fourth{
+    padding: 40px 0px;
+}
+
+.blocks{
+padding: 10px 0px;
+}
+     
+.links{
+    text-decoration: none;
+}
+
+
+.fourth h4,
+.third li,
+.second li,
+.first li{
+    padding: 0.5rem;
+    color: white;
+}
