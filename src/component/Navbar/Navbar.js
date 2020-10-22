@@ -63,27 +63,24 @@ const Navbar = () => {
           <i className={click ? "fas fa-times" : "fas fa-bars"} />
         </div>
 
-        <ul className={click ? "nav-menu active" : "nav-menu"}>
+        <ul className={click ? "nav-menu" : "nav-menu"}>
           <li className="nav-item">
             <i
               className="fa fa-map-marker mobile-icons"
               aria-hidden="true"
               style={{ padding: "4px" }}
             ></i>
-            <a href="#testimonials" id="nav_link">
-              Testimonials
-            </a>
+            <a href="#testimonials">Testimonials</a>
           </li>
+
           <li className="nav-item">
             <i
               className="fa fa-question-circle mobile-icons"
-              aria-hidden="true"
               style={{ padding: "4px" }}
             ></i>
-            <a href="#contact" id="nav_link">
-              Contact
-            </a>
+            <a href="#contact">Contact</a>
           </li>
+
           <li className="nav-item" id="sticky_nav">
             <button className="nav_links  get">Get started</button>
           </li>

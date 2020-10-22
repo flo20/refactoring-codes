@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 8px;
+  border-bottom: 1px solid #888888;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  padding: 15px 0;
+}
+
+.link {
+  text-decoration: none;
+  color: #888888;
+}
+
+.right {
+  display: flex;
+  justify-content: space-between;
+}
+
+.right li:first-child {
+  margin-right: 15px;
+}
+
+.menuSmall {
+  position: relative;
+}
+
+.menuSmall nav {
+  position: absolute;
+  border: 2px solid red;
+}

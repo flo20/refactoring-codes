@@ -1,20 +1,14 @@
-import React from 'react';
-import './App.css';
-
-
+import React from "react";
+import "./App.css";
 import Navbar from "./component/Navbar/Navbar";
-import HowItWorks from "./component/HowItWorks/HowItWorks";
-import WhyGlobuzzer from "./component/WhyGlobuzzer/WhyGlobuzzer";
+import Menu from "./component/Menu/Menu";
+import TravelBlog from "./component/TravelBlog/TravelBlog";
+
 function App() {
   return (
     <div>
       <Navbar />
-      <section id="testimonials">
-        <HowItWorks className="wrap_block" />
-      </section>
-      <section id="contact">
-        <WhyGlobuzzer className="wrap_block" />
-      </section>
+      <TravelBlog />
     </div>
   );
 }
