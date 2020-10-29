@@ -1,0 +1,46 @@
+.circle {
+  color: #fff;
+  background: #5ebfbf;
+  width: 64px;
+  margin: 10px auto;
+  border-radius: 50%;
+  padding: 22px 0;
+  font-weight: bold;
+}
+
+.topicHead {
+  font-size: 18px;
+  color: #555555;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.bodyInfo {
+  font-size: 14px;
+  color: #888888;
+  width: 95%;
+  max-width: 340px;
+  margin: 10px auto;
+}
+
+.wrapper {
+  text-align: center;
+}
+
+
+@media screen and (max-width: 900px) {
+  .circle {
+    width: 30px;
+    padding: 8px 3px;
+  }
+
+  .bodyInfo {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .wrapper{
+    margin: 20px 0;
+  }
+}

@@ -1,0 +1,17 @@
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.underline {
+  border: 2px solid #f24b6a;
+  width: 36px;
+  margin: 25px auto;
+}
+
+@media screen and (max-width: 900px) {
+  .heading{
+      font-size: 20px;
+  }
+}

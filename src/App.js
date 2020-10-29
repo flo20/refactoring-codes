@@ -1,25 +1,19 @@
-import React from 'react';
-import './App.css';
-import Footer from './component/Footer/Footer';
-//import Section from "./component/Section/Section";
-
-
-//import Navbar from "./component/Navbar/Navbar";
+import React from "react";
 import HowItWorks from "./component/HowItWorks/HowItWorks";
-import NavbarR from './component/Navbar/NavbarR';
-import WhyGlobuzzer from "./component/WhyGlobuzzer/WhyGlobuzzer";
+import Menu from "./component/Menu/Menu";
+import MainBody from "./Measurements/MainBody/MainBody";
+
 function App() {
   return (
     <div>
-      {/* <Navbar /> */}
-      <NavbarR/>
-      <section id="testimonials">
-        <HowItWorks/>
-      </section>
-      <section id="contact">
-        <WhyGlobuzzer/>
-      </section>
-      <Footer/>
+      {/* <MainBody> */}
+        <Menu />
+        <HowItWorks />
+        <HowItWorks />
+        <HowItWorks />
+        <HowItWorks />
+        <HowItWorks />
+      {/* </MainBody> */}
     </div>
   );
 }
