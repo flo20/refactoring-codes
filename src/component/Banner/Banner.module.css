@@ -1,0 +1,62 @@
+.container {
+  background-image: url("./../../assets/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 85vh;
+  position: relative;
+}
+
+.body {
+  color: #7b7b7b;
+  font-size: 18px;
+  margin: 20px 0;
+  text-align: left;
+  line-height: 36px;
+}
+
+.left {
+  width: 85%;
+  max-width: 600px;
+}
+
+.left header {
+  text-transform: uppercase;
+  color: #535151;
+  font-weight: 600;
+  font-size: 36px;
+  margin: 20px 0;
+}
+
+.items div {
+  display: inline;
+}
+
+.left button {
+  color: #fff;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  width: 136px;
+  height: 52px;
+  background: #f24b6a;
+  margin: 15px 0;
+}
+
+.right {
+  width: 25%;
+  max-width: 222px;
+  text-align: center;
+  margin-left: 150px;
+  flex-shrink: 0.5;
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px 4px 8px 4px;
+}
+
+.right video {
+  width: 95%;
+  object-fit: cover;
+}

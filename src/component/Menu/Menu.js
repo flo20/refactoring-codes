@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState, useContext } from "react";
 import menu from "./Menu.module.css";
 import logo from "./../../assets/globuzz_logo.svg";
 import logoSmall from "./../../assets/globe_logo.svg";
@@ -6,31 +6,45 @@ import { FaBars } from "react-icons/fa";
 import { FiMapPin } from "react-icons/fi";
 import { RiCloseLine } from "react-icons/ri";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
-import Icons from "./../../Measurements/Icons/Icons";
+import Icon from "./../../Measurements/Icons/Icons";
 
 const Menu = () => {
-  const [sticky, setSticky] = useState(false);
+  //const myContext = useContext(multiStepContext);
+  //for toggling the modal
+  // const { isShowing, toggle } = useModal();
+
   const [smallScreen, setSmallScreen] = useState(false);
+  const [scroll, setScroll] = useState(false);
   const [sideMenu, setSideMenu] = useState(false);
+
+  // const footerRef = useContext(FooterContext);
+  // const bloggerRef = useContext(BloggerContext);
 
   useEffect(() => {
     window.addEventListener("resize", checkScreen);
-    window.addEventListener("scroll", checkSticky);
+    window.addEventListener("scroll", checkScroll);
+    checkScreen();
 
     return () => {
-      window.removeEventListener("scroll", checkSticky);
+      window.removeEventListener("resize", checkScreen);
+      window.removeEventListener("scroll", checkScroll);
     };
   }, []);
 
-  const checkSticky = () => {
-    window.pageYOffset > 0 ? setSticky(true) : setSticky(false);
+  const checkScreen = () => {
+    window.innerWidth <= 755 ? setSmallScreen(true) : setSmallScreen(false);
   };
 
-  const checkScreen = () => {
-    window.innerWidth <= 810 ? setSmallScreen(true) : setSmallScreen(false);
+  const checkScroll = () => {
+    window.pageYOffset > 0 ? setScroll(true) : setScroll(false);
   };
+
+  // const goToRef = (sectionRef) => {
+  //   window.scrollTo({ top: sectionRef.current.offsetTop });
+  // };
+
   const navStyle = () => {
-    if (sticky) {
+    if (scroll) {
       return {
         position: "fixed",
         top: "0",
@@ -43,63 +57,79 @@ const Menu = () => {
 
   return (
     <Fragment>
-      <nav className={menu.container} style={navStyle()}>
+      <nav className={menu.mainMenu} style={navStyle()}>
         <ul className={`${menu.menuItems} ${menu.menuLeft}`}>
           <li className={menu.menuList}>
             {smallScreen ? (
               <span onClick={() => setSideMenu(true)}>
-                <Icons label={<FaBars />} myClass={menu.hamburger} />
+                <Icon label={<FaBars />} myClass={menu.bars} />
               </span>
             ) : (
               <img src={logo} alt="logo" />
             )}
           </li>
         </ul>
+
         {smallScreen && (
-          <ul className={menu.menuItems}>
-            <li>
+          <ul className={`${menu.menuItems} ${menu.menuCenter}`}>
+            <li className={menu.menuList}>
               <img src={logoSmall} alt="logoSmall" />
             </li>
           </ul>
         )}
 
-        <ul className={menu.menuItems}>
+        <ul className={`${menu.menuItems} ${menu.menuRight}`}>
           {!smallScreen && (
             <Fragment>
-              <li className={menu.menuList} style={{ color: sticky && "#fff" }}>
+              <li
+                className={menu.menuList}
+                // onClick={() => goToRef(bloggerRef)}
+                style={{ color: scroll && "#fff " }}
+              >
                 Testimonials
               </li>
-              <li className={menu.menuList} style={{ color: sticky && "#fff" }}>
-                Contact Us
+              <li
+                className={menu.menuList}
+                // onClick={() => goToRef(footerRef)}
+                style={{ color: scroll && "#fff " }}
+              >
+                Contact us
               </li>
             </Fragment>
           )}
           <li
+            // onClick={toggle}
             className={menu.menuList}
-            style={{ background: sticky && "#f24b6a", color: sticky && "#fff" }}
+            style={{ background: scroll && "#f24b6a", color: scroll && "#fff" }}
           >
-            Get Started
+            Get started
           </li>
         </ul>
       </nav>
-      {/*  Side Bar Menu */}
-      <nav className={menu.sideNav} style={{ left: sideMenu && "0px" }}>
+      {/* <GetStartedModal
+        isShowing={isShowing}
+        hide={toggle}
+        steps={steps}
+        currentStep={myContext.currentStepNumber}
+      /> */}
+
+      <nav className={menu.sideMenu} style={{ left: sideMenu && "0px" }}>
         <ul className={`${menu.sideItems} ${menu.sideLeft}`}>
           <li className={menu.sideList}>
             <span>globuzzer</span>
             <span onClick={() => setSideMenu(false)}>
-              <Icons label={<RiCloseLine />} myClass={menu.close} />
+              <Icon label={<RiCloseLine />} myClass={menu.close} />
             </span>
           </li>
           <li className={menu.sideList}>
             <span>
-              <Icons label={<FiMapPin />} />
+              <Icon label={<FiMapPin />} />
             </span>
             <span>Testimonials</span>
           </li>
           <li className={menu.sideList}>
             <span>
-              <Icons label={<AiOutlineQuestionCircle />} />
+              <Icon label={<AiOutlineQuestionCircle />} />
             </span>
             <span>Contact us</span>
           </li>
@@ -108,9 +138,10 @@ const Menu = () => {
         <ul className={`${menu.sideItems} ${menu.sideRight}`}>
           <li
             className={menu.sideList}
-            style={{ background: sticky && "#f24b6a" }}
+            // onClick={toggle}
+            style={{ background: scroll && "#f24b6a" }}
           >
-            Get Started
+            Get started
           </li>
         </ul>
       </nav>

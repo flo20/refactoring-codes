@@ -1,19 +1,13 @@
 import React from "react";
+import Banner from "./component/Banner/Banner";
 import HowItWorks from "./component/HowItWorks/HowItWorks";
-import Menu from "./component/Menu/Menu";
-import MainBody from "./Measurements/MainBody/MainBody";
+
 
 function App() {
   return (
     <div>
-      {/* <MainBody> */}
-        <Menu />
+        <Banner/>
         <HowItWorks />
-        <HowItWorks />
-        <HowItWorks />
-        <HowItWorks />
-        <HowItWorks />
-      {/* </MainBody> */}
     </div>
   );
 }
