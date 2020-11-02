@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState, useContext } from "react";
+import React, { Fragment, useEffect, useState} from "react";
 import menu from "./Menu.module.css";
 import logo from "./../../assets/globuzz_logo.svg";
 import logoSmall from "./../../assets/globe_logo.svg";
