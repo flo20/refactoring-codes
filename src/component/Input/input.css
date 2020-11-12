@@ -1,0 +1,24 @@
+* {
+  outline: none;
+}
+
+.formContainer {
+  position: relative;
+}
+
+.form {
+  text-align: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  width: 60%;
+  margin: 50px auto 0 auto;
+  padding: 10px 0;
+}
+
+.formInput {
+  margin: 20px 0;
+}
+
+.error {
+  color: red;
+  font-size: 11px;
+}
