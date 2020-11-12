@@ -1,11 +1,11 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Grid from "../../Measurements/Grid/Grid";
 import Headings from "../../Measurements/Headings/Headings";
 import HowItWorksInfo from "../../Measurements/HowItWorksInfo/HowItWorksInfo";
 
 const HowItWorks = () => {
   return (
-    <div>
+    <Fragment>
       <Headings label="How It Works" />
       <Grid>
         <HowItWorksInfo
@@ -25,7 +25,7 @@ const HowItWorks = () => {
               streams to make revenue"
         />
       </Grid>
-    </div>
+    </Fragment>
   );
 };
 
