@@ -5,8 +5,11 @@
   color: #555555;
   font-weight: 400;
   padding-top: 2rem;
+  
 }
-
+.back{
+   background: white;
+}
 .underline {
   border: 2px solid #f24b6a;
   width: 36px;

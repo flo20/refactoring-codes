@@ -6,9 +6,12 @@ const Input = () => {
     lastName: "",
   });
 
-  const handleChange = () => {
+
+  const handleChange = ({input}) => {
+    const data = { ...details }
+    data = input.target.value
     setDetails({
-      ...details,
+      details: data
     });
   };
   console.log(details);

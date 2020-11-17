@@ -8,6 +8,7 @@
   font-weight: bold;
 }
 
+
 .topicHead {
   font-size: 18px;
   color: #555555;
@@ -25,8 +26,8 @@
 
 .wrapper {
   text-align: center;
-}
 
+}
 
 @media screen and (max-width: 900px) {
   .circle {
@@ -40,7 +41,7 @@
 }
 
 @media screen and (max-width: 760px) {
-  .wrapper{
+  .wrapper {
     margin: 20px 0;
   }
 }
