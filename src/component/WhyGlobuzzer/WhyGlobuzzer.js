@@ -1,12 +1,13 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Headings from "../../Measurements/Headings/Headings";
 import WhyGloData from "../../Measurements/WhyGloInfo/WhyGloData";
 import WhyGloInfo from "../../Measurements/WhyGloInfo/WhyGloInfo";
+import Section from "./../../Measurements/Section/Section";
 import why from "./WhyGlobuzzer.module.css";
 
 const WhyGlobuzzer = () => {
   return (
-    <Fragment>
+    <Section>
       <div className={why.wrapper}>
         <Headings label="Why Globuzzer" />
         <p className={why.subheading}>
@@ -22,7 +23,7 @@ const WhyGlobuzzer = () => {
           <WhyGloInfo key={index} icons={icons} topic={topic} text={text} />
         ))}
       </div>
-    </Fragment>
+    </Section>
   );
 };
 
