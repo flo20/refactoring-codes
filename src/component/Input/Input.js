@@ -1,9 +1,10 @@
 import React, { Fragment, useState } from "react";
+import "./input.css";
 
 const Input = () => {
   const [details, setDetails] = useState({
-    firstName: "",
-    lastName: "",
+    firstname: "",
+    lastname: "",
   });
 
 
@@ -14,27 +15,43 @@ const Input = () => {
       details: data
     });
   };
-  console.log(details);
+
+  const { firstname, lastname } = details;
   return (
     <Fragment>
-      <form>
-        <label>First Name:</label>
-        <input
-          type="text"
-          name="firstname"
-          placeholder="First name"
-          value={details.firstName}
-          onChange={handleChange}
-        />
-        <label>Last Name:</label>
-        <input
-          type="text"
-          name="firstname"
-          placeholder="First name"
-          value={details.lastName}
-          onChange={handleChange}
-        />
-      </form>
+      <div className="formContainer">
+        <form className="form" onSubmit={handleSubmit}>
+          <div className="formInput">
+            <label>First Name:</label>
+            <input
+              type="text"
+              name="firstname"
+              placeholder="First name"
+              value={firstname}
+              onChange={handleChange}
+            />
+
+            {error.firstname && <p className="error">{error.firstname}</p>}
+          </div>
+
+          <div className="formInput">
+            <label>Last Name:</label>
+            <input
+              type="text"
+              name="lastname"
+              placeholder="Last name"
+              value={lastname}
+              onChange={handleChange}
+            />
+
+            {error.lastname && <p className="error">{error.lastname}</p>}
+          </div>
+
+          <div className="formInput">
+            <button>Create Account</button>
+          </div>
+        </form>
+      </div>
     </Fragment>
   );
 };
