@@ -2,21 +2,25 @@ import React, { Fragment, useState } from "react";
 import "./input.css";
 
 const Input = () => {
-  const [details, setDetails] = useState({
+  const [error,setError] = useState("")
+  const [input, setInput] = useState({
     firstname: "",
     lastname: "",
   });
 
-
-  const handleChange = ({input}) => {
-    const data = { ...details }
-    data = input.target.value
-    setDetails({
-      details: data
-    });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("submitted");
   };
 
-  const { firstname, lastname } = details;
+  const handleChange = ({ target: inputs }) => {
+    let update = { ...input };
+    update[inputs.name] = inputs.value;
+    setInput(update);
+   
+  };
+
+ // const { firstname, lastname } = input;
   return (
     <Fragment>
       <div className="formContainer">
@@ -25,26 +29,24 @@ const Input = () => {
             <label>First Name:</label>
             <input
               type="text"
+              placeholder="Enter name"
               name="firstname"
-              placeholder="First name"
-              value={firstname}
+              autoFocus
+              value={input.firstname}
               onChange={handleChange}
             />
-
-            {error.firstname && <p className="error">{error.firstname}</p>}
           </div>
 
           <div className="formInput">
             <label>Last Name:</label>
             <input
               type="text"
+              placeholder="Enter name"
               name="lastname"
-              placeholder="Last name"
-              value={lastname}
+              autoFocus
+              value={input.lastname}
               onChange={handleChange}
             />
-
-            {error.lastname && <p className="error">{error.lastname}</p>}
           </div>
 
           <div className="formInput">

@@ -5,7 +5,7 @@ import WhyGlobuzzer from "./component/WhyGlobuzzer/WhyGlobuzzer";
 import WhoWeAre from "./component/WhoWeAre/WhoWeAre";
 import JourneyContainer from "./component/Journey/JourneyContainer";
 import { Footer } from "./component/Footer/Footer";
-//import Input from "./component/Input/Input";
+import Input from "./component/Input/Input";
 
 function App() {
  
@@ -17,7 +17,7 @@ function App() {
       <WhoWeAre />
       <JourneyContainer />
       <Footer />
-      {/* <Input /> */}
+      <Input />
     </div>
   );
 }
