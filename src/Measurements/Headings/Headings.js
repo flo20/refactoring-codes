@@ -3,10 +3,10 @@ import heading from "./Headings.module.css";
 
 const Headings = ({ label }) => {
   return (
-    <div className={heading.back}>
-      <h1 className={heading.heading}>{label}</h1>
+    <header className={heading.heading}>
+      {label}
       <div className={heading.underline} />
-    </div>
+    </header >
   );
 };
 

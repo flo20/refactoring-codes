@@ -1,15 +1,11 @@
 .heading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   color: #555555;
   font-weight: 400;
+  font-size: 34px;
   padding-top: 2rem;
-  
 }
-.back{
-   background: white;
-}
+
 .underline {
   border: 2px solid #f24b6a;
   width: 36px;
@@ -17,7 +13,7 @@
 }
 
 @media screen and (max-width: 900px) {
-  .heading{
-      font-size: 20px;
+  .heading {
+    font-size: 20px;
   }
 }

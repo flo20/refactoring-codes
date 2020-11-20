@@ -3,7 +3,7 @@ import InputContainer from "../../Measurements/common/InputContainer";
 import "./input.css";
 
 const Input = () => {
-  const [error, setError] = useState({});
+  const [errors, setError] = useState({});
   const [input, setInput] = useState({
     firstname: "",
     lastname: "",
@@ -11,9 +11,9 @@ const Input = () => {
 
   const validate = () => {
     const errors = {};
-    if (input.firstname.trim() === "")
+    if (!input.firstname)
       errors.firstname = "Firstname is required";
-    if (input.lastname.trim() === "") errors.lastname = "Lastname is required";
+    if (!input.lastname) errors.lastname = "Lastname is required";
     return Object.keys(errors).length === 0 ? null : errors;
   };
 
@@ -21,9 +21,8 @@ const Input = () => {
     e.preventDefault();
 
     const errors = validate();
-    console.log(error);
-    setError({ errors });
-    if (errors) return;
+
+    if (errors) return setError(errors);
 
     console.log("submitted");
   };
@@ -33,8 +32,8 @@ const Input = () => {
     update[inputs.name] = inputs.value;
     setInput(update);
   };
+  console.log(errors);
 
-  const { firstname, lastname } = input;
   return (
     <Fragment>
       <div className="formContainer">
@@ -43,16 +42,17 @@ const Input = () => {
             type="text"
             placeholder="Enter name"
             name="firstname"
-            value={firstname}
+            value={input.firstname}
             onChange={handleChange}
+            error={errors}
           />
-
           <InputContainer
             type="text"
             placeholder="Enter name"
             name="lastname"
-            value={lastname}
+            value={input.lastname}
             onChange={handleChange}
+            error={errors}
           />
 
           <div className="formInput">
